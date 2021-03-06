@@ -13,16 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge
 
-import androidx.compose.ui.graphics.Color
+import android.text.format.DateUtils
 
-val purple200 = Color(0xFFBB86FC)
-val purple500 = Color(0xFF6200EE)
-val purple700 = Color(0xFF3700B3)
-val teal200 = Color(0xFF03DAC5)
-val purple_background = Color(0xFF585171)
-val timerStart = Color(0xFFDE6789)
-val timerCenter = Color(0xFFE882A6)
-val timerEnd = Color(0xFFF0A1A8)
-val grey = Color(0xFFF0F0F0)
+fun getReadableTime(seconds: Int): String = if (seconds < 60) {
+    seconds.toString()
+} else {
+    DateUtils.formatElapsedTime(seconds.toLong())
+}
